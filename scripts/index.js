@@ -2,22 +2,22 @@ let profileEditButton = document.querySelector('.profile__edit');
 let popup = document.querySelector('.popup');
 let popupOpen = document.querySelector('.popup__opened');
 let popupButtonClose = document.querySelector('.popup__button_close');
-
-function openPopup() {
-  popup.classList.add('popup__opened');
-}
-profileEditButton.addEventListener('click', openPopup);
-
-function closePopup() {
-  popup.classList.remove('popup__opened');
-}
-popupButtonClose.addEventListener('click', closePopup);
-
 // Находим форму в DOM
 let formElement = document.querySelector('.popup__container');// Воспользуйтесь методом querySelector()
 // Находим поля формы в DOM
 let nameInput = document.querySelector('.popup__name')// Воспользуйтесь инструментом .querySelector()
 let jobInput = document.querySelector('.popup__description')// Воспользуйтесь инструментом .querySelector()
+
+function openPopup() {
+  popup.classList.add('popup__opened');
+}
+
+function closePopup() {
+  popup.classList.remove('popup__opened');
+}
+
+profileEditButton.addEventListener('click', openPopup);
+popupButtonClose.addEventListener('click', closePopup);
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет

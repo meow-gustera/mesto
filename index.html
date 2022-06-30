@@ -21,11 +21,11 @@
             <div class="profile__change-block">
               <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <button class="profile__edit"></button>
+                <button class="profile__edit" type="button"></button>
             </div>
             <p class="profile__description">Исследователь океана</p>
           </div>
-          <button class="profile__button"></button>
+          <button class="profile__button" type="button"></button>
         </section>
         <section class="elements">
           <ul class="element">
@@ -33,42 +33,42 @@
               <img src="./images/Karachaevsk_1.jpg" class="element__photo" alt="Карачаевск">
               <div class="element__description">
                 <h2 class="element__title">Карачаевск</h2>
-                <div class="element__like element__like_disabled"></div>
+                <button type="button" class="element__like element__like_disabled"></button>
               </div>
             </li>
             <li class="element__item">
               <img src="./images/elbrus_1.jpg" class="element__photo" alt="Гора Эльбрус">
               <div class="element__description">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <div class="element__like element__like_disabled"></div>
+                <button type="button" class="element__like element__like_disabled"></button>
               </div>
             </li>
             <li class="element__item">
               <img src="./images/dombai_1.jpg" class="element__photo" alt="Домбай">
               <div class="element__description">
                 <h2 class="element__title">Домбай</h2>
-                <div class="element__like element__like_disabled"></div>
+                <button type="button" class="element__like element__like_disabled"></button>
               </div>
               </li>
             <li class="element__item">
               <img src="./images/elbrus_2.jpg" class="element__photo" alt="Гора Эльбрус">
               <div class="element__description">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <div class="element__like element__like_disabled"></div>
+                <button type="button" class="element__like element__like_disabled"></button>
               </div>
             </li>
             <li class="element__item">
               <img src="./images/dombai_2.jpg" class="element__photo" alt="Домбай">
               <div class="element__description">
                 <h2 class="element__title">Домбай</h2>
-                <div class="element__like element__like_disabled"></div>
+                <button type="button" class="element__like element__like_disabled"></button>
               </div>
             </li>
             <li class="element__item">
               <img src="./images/Karachaevsk_2.jpg" class="element__photo" alt="Карачаево-Черкессия">
               <div class="element__description">
                 <h2 class="element__title">Карачаево-Черкессия</h2>
-                <div class="element__like element__like_disabled"></div>
+                <button type="button" class="element__like element__like_disabled"></button>
               </div>
             </li>
           </ul>
@@ -80,13 +80,15 @@
       </footer>
 
       <div class="popup">
-        <form class="popup__container">
-          <button class="popup__button popup__button_close"></button>
+        <div class="popup__container">
+          <button class="popup__button popup__button_close" type="button"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" class="popup__name" placeholder="Жак-Ив Кусто">
-          <input type="text" class="popup__description" placeholder="Исследователь океана">
-          <button class="popup__button popup__button_save" type="submit">Сохранить</button>
-        </form>
+          <form class="popup__input">
+            <input type="text" class="popup__name" placeholder="Жак-Ив Кусто" name="name" value="Жак-Ив Кусто">
+            <input type="text" class="popup__description" placeholder="Исследователь океана" name="job" value="Исследователь океана">
+            <button class="popup__button popup__button_save" type="submit">Сохранить</button>
+          </form>
+        </div>
       </div>
 
     </div>

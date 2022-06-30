@@ -7,10 +7,14 @@
   gap: 0;
 }
 
-@media  screen and (max-width: 767px) {
+@media  screen and (max-width: 1023px) {
   .profile {
     max-width: 282px;
     grid-template-columns: 1fr;
     padding-bottom: 34px;
+
+
   }
 }
+
+

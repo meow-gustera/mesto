@@ -18,8 +18,10 @@
   }
 }
 
-
 @media  screen and (max-width: 767px) {
+  .element__item:nth-child(3n) {
+    margin: 0 0 20px 0;
+  }
   .element__item {
     margin: 0 0 20px 0;
   }

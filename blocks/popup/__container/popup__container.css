@@ -2,20 +2,12 @@
   background-color: #FFFFFF;
   color: #000;
   border-radius: 10px;
-  position: absolute;
-  width: 34%;
-  max-height: 330px;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
+  max-width: 430px;
+  position: relative;
 }
 
 ::placeholder {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -24,7 +16,7 @@
 }
 
 input[type="text"] {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -40,7 +32,6 @@ input[type="text"] {
 
 @media screen and (max-width: 767px) {
   .popup__container {
-    width: 282px;
-    height: 350px;
+    max-width: 282px;
   }
 }
