@@ -1,0 +1,25 @@
+.profile__edit {
+  background-color: #2A2C2F;
+  background-image: url(../../../images/Edit\ Button.png);
+  height: 10px;
+  background-size: 100%;
+  border: 0.5px solid white;
+  padding: 12px;
+  margin-left: 20px;
+  margin-top: 16px;
+}
+
+.profile__edit:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+@media  screen and (max-width: 767px) {
+  .profile__edit {
+    height: 7px;
+    padding: 8px;
+    margin-left: 14px;
+    margin-top: 9px;
+  }
+}
+
