@@ -17,4 +17,4 @@
 
 **Ссылка на проект**
 
-*[Ссылка на GitHub Pages](https://meow-gustera.github.io/mesto)
+* [Ссылка на GitHub Pages](https://meow-gustera.github.io/mesto)
