@@ -1,23 +1,24 @@
 let profileEditButton = document.querySelector('.profile__edit');
 let popup = document.querySelector('.popup');
-let popupOpen = document.querySelector('.popup__opened');
-let popupButtonClose = document.querySelector('.popup__button_close');
+let popupButtonClose = document.querySelector('.popup__button_input_close');
 // Находим форму в DOM
-let formElement = document.querySelector('.popup__container');// Воспользуйтесь методом querySelector()
+let formElement = document.querySelector('.popup__input');// Воспользуйтесь методом querySelector()
 // Находим поля формы в DOM
-let nameInput = document.querySelector('.popup__name')// Воспользуйтесь инструментом .querySelector()
-let jobInput = document.querySelector('.popup__description')// Воспользуйтесь инструментом .querySelector()
+let nameInput = document.querySelector('.popup__input_data_name')// Воспользуйтесь инструментом .querySelector()
+let jobInput = document.querySelector('.popup__input_data_description')// Воспользуйтесь инструментом .querySelector()
+let profileName = document.querySelector('.profile__name');
+let profileJob = document.querySelector('.profile__description');
+
 
 function openPopup() {
-  popup.classList.add('popup__opened');
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
+  popup.classList.add('popup_opened');
 }
 
 function closePopup() {
-  popup.classList.remove('popup__opened');
+  popup.classList.remove('popup_opened');
 }
-
-profileEditButton.addEventListener('click', openPopup);
-popupButtonClose.addEventListener('click', closePopup);
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
@@ -27,19 +28,19 @@ function formSubmitHandler (evt) {
                                                 // О том, как это делать, расскажем позже.
 
     // Получите значение полей jobInput и nameInput из свойства value
-    let nameInput = document.querySelector('.popup__name').value;
-    let jobInput = document.querySelector('.popup__description').value;
     // Выберите элементы, куда должны быть вставлены значения полей
-    let profileName = document.querySelector('.profile__name');
-    let profileJob = document.querySelector('.profile__description');
     // Вставьте новые значения с помощью textContent
-    profileName.textContent = nameInput;
-    profileJob.textContent = jobInput;
+    profileName.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;
 
     closePopup();
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
+
+
+profileEditButton.addEventListener('click', openPopup);
+popupButtonClose.addEventListener('click', closePopup);
 formElement.addEventListener('submit', formSubmitHandler);
-console.log(formElement)
+

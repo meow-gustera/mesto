@@ -6,32 +6,9 @@
   position: relative;
 }
 
-::placeholder {
-  font-family: 'Inter', 'Arial', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
-}
-
-input[type="text"] {
-  font-family: 'Inter', 'Arial', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
-}
-
 @media screen and (max-width: 1023px) {
   .popup__container {
-    max-width: 282px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .popup__container {
-    max-width: 282px;
+    width: 282px;
+    min-height: 325px;
   }
 }

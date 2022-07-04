@@ -3,7 +3,7 @@
   padding: 40px 0 47px;
   display: grid;
   margin: 0 auto;
-  grid-template-columns:154px 572px 154px;
+  grid-template-columns: 150px 580px 150px;
   gap: 0;
 }
 
@@ -12,8 +12,6 @@
     max-width: 282px;
     grid-template-columns: 1fr;
     padding-bottom: 34px;
-
-
   }
 }
 

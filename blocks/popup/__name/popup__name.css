@@ -8,7 +8,7 @@
   border: none;
   width: 358px;
   margin: 0 auto;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 1279px) {
@@ -16,10 +16,3 @@
     width: 238px;
   }
 }
-
-@media  screen and (max-width: 1023px) {
-  .popup__name {
-    width: 238px;
-  }
-}
-

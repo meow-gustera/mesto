@@ -1,12 +1,14 @@
 .profile__edit {
   background-color: #000000;
-  background-image: url(../../../images/Edit\ Button.png);
-  height: 10px;
-  background-size: 100%;
+  background-image: url(../../../images/Edit_Button.svg);
+  height: 5px;
+  background-size: 45%;
   border: 0.5px solid white;
-  padding: 12px;
+  padding: 11px;
   margin-left: 20px;
-  margin-top: 16px;
+  margin-top: 13px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .profile__edit:hover {
@@ -16,10 +18,10 @@
 
 @media  screen and (max-width: 767px) {
   .profile__edit {
-    height: 7px;
+    height: 9px;
     padding: 8px;
-    margin-left: 14px;
-    margin-top: 9px;
+    margin-left: 10px;
+    margin-top: 8px;
   }
 }
 
