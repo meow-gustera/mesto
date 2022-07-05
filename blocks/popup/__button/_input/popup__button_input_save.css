@@ -16,6 +16,10 @@
   border-bottom: none;
 }
 
+.opup__button_input_save:hover {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 1279px) {
   .popup__button_input_save {
     min-width: 238px;
@@ -29,6 +33,6 @@
     font-size: 14px;
     line-height: 17px;
     max-width: 238px;
-    margin: 45px auto 0px;
+    margin: 45px auto 15px;
   }
 }
