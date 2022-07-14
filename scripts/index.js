@@ -1,11 +1,16 @@
 const profileEditButton = document.querySelector('.profile__edit');
-const popup = document.querySelector('.popup');
-const popupButtonClose = document.querySelector('.popup__button_input_close');
+const popupEditProfile = document.querySelector('.popup_edit-profile');
+const popupEditButtonClose = document.querySelector('div.popup_edit-profile .popup__button_input_close');
+
+const placeAddButton = document.querySelector('.profile__add-button');
+const popupAddPlace  = document.querySelector('.popup_add-place');
+const popupAddButtonClose = document.querySelector('div.popup_add-place .popup__button_input_close');
+
 // Находим форму в DOM
-const formElement = document.querySelector('.popup__input');// Воспользуйтесь методом querySelector()
+const formElement = document.querySelector('.popup__input');
 // Находим поля формы в DOM
-const nameInput = document.querySelector('.popup__input_data_name')// Воспользуйтесь инструментом .querySelector()
-const jobInput = document.querySelector('.popup__input_data_description')// Воспользуйтесь инструментом .querySelector()
+const nameInput = document.querySelector('.popup__input_data_name');
+const jobInput = document.querySelector('.popup__input_data_description');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__description');
 
@@ -50,15 +55,25 @@ initialCards.forEach (function(element) {
   elementList.append(newElement);
 });
 
-function openPopup() {
+
+function openPopupEditProfile() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  popup.classList.add('popup_opened');
+  popupEditProfile.classList.add('popup_opened');
 }
 
-function closePopup() {
-  popup.classList.remove('popup_opened');
+function closePopupEditProfile() {
+  popupEditProfile.classList.remove('popup_opened');
 }
+
+function openPopupPlaceAdd() {
+  popupAddPlace.classList.add('popup_opened');
+}
+
+function closePopupPlaceAdd() {
+  popupAddPlace.classList.remove('popup_opened');
+}
+
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
@@ -73,14 +88,18 @@ function formSubmitHandler (evt) {
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
 
-    closePopup();
+    closePopupEditProfile();
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 
 
-profileEditButton.addEventListener('click', openPopup);
-popupButtonClose.addEventListener('click', closePopup);
+profileEditButton.addEventListener('click', openPopupEditProfile);
+popupEditButtonClose.addEventListener('click', closePopupEditProfile);
+
+placeAddButton.addEventListener('click', openPopupPlaceAdd);
+popupAddButtonClose.addEventListener('click', closePopupPlaceAdd);
+
 formElement.addEventListener('submit', formSubmitHandler);
 
