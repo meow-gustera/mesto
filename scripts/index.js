@@ -5,12 +5,9 @@ const popupEditButtonClose = document.querySelector('div.popup_edit-profile .pop
 const placeAddButton = document.querySelector('.profile__add-button');
 const popupAddPlace  = document.querySelector('.popup_add-place');
 const popupAddButtonClose = document.querySelector('div.popup_add-place .popup__button_input_close');
-
-// Находим форму в DOM
 const formElementEdit = document.querySelector('div.popup_edit-profile .popup__input');
 const formElementAddPlace = document.querySelector('div.popup_add-place .popup__input');
 
-// Находим поля формы в DOM
 const nameInput = document.querySelector('.popup__input_data_name');
 const jobInput = document.querySelector('.popup__input_data_description');
 const profileName = document.querySelector('.profile__name');
@@ -51,17 +48,27 @@ const initialCards = [
 ];
 
 
-initialCards.forEach (function(element) {
+function createElement(element) {
   const newElement = elementTemplate.cloneNode(true);
   newElement.querySelector('.element__title').textContent = element.place;
   newElement.querySelector('.element__photo').alt = element.place;
   newElement.querySelector('.element__photo').src = element.link;
-  elementList.append(newElement);
-});
+  const likeButton = newElement.querySelector('.element__like');
+  const deleteButton = newElement.querySelector('.element__delete');
 
-const renderItems = function(placeInput,liknInput ) {
-  elementList.insertAdjacentElement('afterbegin', (element.place, element.link));
+  likeButton.addEventListener('click', function() {
+    likeButton.classList.toggle('element__like_active');
+  });
+
+  deleteButton.addEventListener('click', function() {
+    const item = deleteButton.closest('.element__item');
+    item.remove();
+  });
+
+  elementList.append(newElement);
 }
+
+initialCards.forEach(createElement);
 
 function openPopupEditProfile() {
   nameInput.value = profileName.textContent;
@@ -94,6 +101,18 @@ function formSubmitHandlerAddPlace (evt) {
   newElement.querySelector('.element__title').textContent = placeInput.value;
   newElement.querySelector('.element__photo').alt = placeInput.value;
   newElement.querySelector('.element__photo').src = liknInput.value;
+  const likeButton = newElement.querySelector('.element__like');
+  const deleteButton = newElement.querySelector('.element__delete');
+
+  likeButton.addEventListener('click', function() {
+    likeButton.classList.toggle('element__like_active');
+  });
+
+  deleteButton.addEventListener('click', function() {
+    const item = deleteButton.closest('.element__item');
+    item.remove();
+  });
+
   elementList.prepend(newElement);
 
   closePopupPlaceAdd();
@@ -107,5 +126,3 @@ popupAddButtonClose.addEventListener('click', closePopupPlaceAdd);
 
 formElementEdit.addEventListener('submit', formSubmitHandlerEdit);
 formElementAddPlace.addEventListener('submit', formSubmitHandlerAddPlace);
-
-
