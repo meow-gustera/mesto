@@ -1,13 +1,13 @@
 const profileEditButton = document.querySelector('.profile__edit');
-const popupEditProfile = document.querySelector('.popup__edit-profile');
-const popupEditButtonClose = document.querySelector('div.popup__edit-profile .popup__button_input_close');
+const popupEditProfile = document.querySelector('.popup_edit_profile');
+const popupEditButtonClose = document.querySelector('div.popup_edit_profile .popup__button_input_close');
 
 const placeAddButton = document.querySelector('.profile__add-button');
-const popupAddPlace  = document.querySelector('.popup__add-place');
-const popupAddButtonClose = document.querySelector('div.popup__add-place .popup__button_input_close');
-const formElementEdit = document.querySelector('div.popup__edit-profile .popup__input');
-const formElementAddPlace = document.querySelector('div.popup__add-place .popup__input');
-const popupZoomPhoto = document.querySelector('.popup__image');
+const popupAddPlace  = document.querySelector('.popup_add_place');
+const popupAddButtonClose = document.querySelector('div.popup_add_place .popup__button_input_close');
+const formElementEdit = document.querySelector('div.popup_edit_profile .popup__input');
+const formElementAddPlace = document.querySelector('div.popup_add_place .popup__input');
+const popupZoomPhoto = document.querySelector('.popup_zoom_image');
 
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__description');
@@ -22,7 +22,7 @@ const elementTemplate = document.querySelector('.element_template').content;
 
 const popupPhoto = document.querySelector('.popup__photo');
 const popupImageText = document.querySelector('.popup__description');
-const popupPhotoButtonClose = document.querySelector('div.popup__image .popup__button_input_close');
+const popupPhotoButtonClose = document.querySelector('div.popup_zoom_image .popup__button_input_close');
 
 const initialCards = [
   {
