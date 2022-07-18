@@ -1,24 +1,28 @@
 const profileEditButton = document.querySelector('.profile__edit');
-const popupEditProfile = document.querySelector('.popup_edit-profile');
-const popupEditButtonClose = document.querySelector('div.popup_edit-profile .popup__button_input_close');
+const popupEditProfile = document.querySelector('.popup__edit-profile');
+const popupEditButtonClose = document.querySelector('div.popup__edit-profile .popup__button_input_close');
 
 const placeAddButton = document.querySelector('.profile__add-button');
-const popupAddPlace  = document.querySelector('.popup_add-place');
-const popupAddButtonClose = document.querySelector('div.popup_add-place .popup__button_input_close');
-const formElementEdit = document.querySelector('div.popup_edit-profile .popup__input');
-const formElementAddPlace = document.querySelector('div.popup_add-place .popup__input');
+const popupAddPlace  = document.querySelector('.popup__add-place');
+const popupAddButtonClose = document.querySelector('div.popup__add-place .popup__button_input_close');
+const formElementEdit = document.querySelector('div.popup__edit-profile .popup__input');
+const formElementAddPlace = document.querySelector('div.popup__add-place .popup__input');
+const popupZoomPhoto = document.querySelector('.popup__image');
 
-const nameInput = document.querySelector('.popup__input_data_name');
-const jobInput = document.querySelector('.popup__input_data_description');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__description');
+const nameInput = document.querySelector('.popup__input_data_name');
 
+const jobInput = document.querySelector('.popup__input_data_description');
 const placeInput = document.querySelector('.popup__input_data_place');
 const liknInput = document.querySelector('.popup__input_data_link');
 
-//Задается лист для элементов и область для тепмлейтов
 const elementList = document.querySelector('.element');
 const elementTemplate = document.querySelector('.element_template').content;
+
+const popupPhoto = document.querySelector('.popup__photo');
+const popupImageText = document.querySelector('.popup__description');
+const popupPhotoButtonClose = document.querySelector('div.popup__image .popup__button_input_close');
 
 const initialCards = [
   {
@@ -47,7 +51,6 @@ const initialCards = [
   }
 ];
 
-
 function createElement(element) {
   const newElement = elementTemplate.cloneNode(true);
   newElement.querySelector('.element__title').textContent = element.place;
@@ -55,7 +58,7 @@ function createElement(element) {
   newElement.querySelector('.element__photo').src = element.link;
   const likeButton = newElement.querySelector('.element__like');
   const deleteButton = newElement.querySelector('.element__delete');
-
+  const photoPlace = newElement.querySelector('.element__photo');
   likeButton.addEventListener('click', function() {
     likeButton.classList.toggle('element__like_active');
   });
@@ -64,6 +67,15 @@ function createElement(element) {
     const item = deleteButton.closest('.element__item');
     item.remove();
   });
+
+  photoPlace.addEventListener('click', function openPhotoPlace() {
+    popupZoomPhoto.classList.add('popup_opened');
+
+    popupPhoto.src = photoPlace.closest('.element__photo').src;
+    popupImageText.textContent = photoPlace.closest('.element__photo').alt;
+  });
+
+
 
   elementList.append(newElement);
 }
@@ -88,6 +100,10 @@ function closePopupPlaceAdd() {
   popupAddPlace.classList.remove('popup_opened');
 }
 
+ function closePopupZoomPhoto() {
+  popupZoomPhoto.classList.remove('popup_opened');
+};
+
 function formSubmitHandlerEdit (evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
@@ -103,6 +119,8 @@ function formSubmitHandlerAddPlace (evt) {
   newElement.querySelector('.element__photo').src = liknInput.value;
   const likeButton = newElement.querySelector('.element__like');
   const deleteButton = newElement.querySelector('.element__delete');
+  const photoPlace = newElement.querySelector('.element__photo');
+
 
   likeButton.addEventListener('click', function() {
     likeButton.classList.toggle('element__like_active');
@@ -113,6 +131,14 @@ function formSubmitHandlerAddPlace (evt) {
     item.remove();
   });
 
+  photoPlace.addEventListener('click', function openPhotoPlace() {
+    popupZoomPhoto.classList.add('popup_opened');
+
+    popupPhoto.src = photoPlace.closest('.element__photo').src;
+    popupImageText.textContent = photoPlace.closest('.element__photo').alt;
+  });
+
+
   elementList.prepend(newElement);
 
   closePopupPlaceAdd();
@@ -120,9 +146,8 @@ function formSubmitHandlerAddPlace (evt) {
 
 profileEditButton.addEventListener('click', openPopupEditProfile);
 popupEditButtonClose.addEventListener('click', closePopupEditProfile);
-
+popupPhotoButtonClose.addEventListener('click', closePopupZoomPhoto);
 placeAddButton.addEventListener('click', openPopupPlaceAdd);
 popupAddButtonClose.addEventListener('click', closePopupPlaceAdd);
-
 formElementEdit.addEventListener('submit', formSubmitHandlerEdit);
 formElementAddPlace.addEventListener('submit', formSubmitHandlerAddPlace);
