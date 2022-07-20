@@ -107,7 +107,7 @@ function handleProfileFormSubmit (evt) {
   closePopup(popupEditProfile)
 }
 
-function handleubmitHandlerAddPlace (evt) {
+function handleSubmitAddPlace (evt) {
   evt.preventDefault();
   const NewCard = {
     place: placeInput.value,
@@ -137,4 +137,4 @@ popupEditProfile.addEventListener('click', function() {
    closePopup(popupAddPlace);
   });
 formElementEdit.addEventListener('submit', handleProfileFormSubmit);
-formElementAddPlace.addEventListener('submit', handleubmitHandlerAddPlace);
+formElementAddPlace.addEventListener('submit', handleSubmitAddPlace);
