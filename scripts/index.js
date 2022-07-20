@@ -86,13 +86,6 @@ render();
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  //данные для попаgа профиля
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
-
-  //данные для попапа добавить места
-    placeInput.value = '';
-    linkInput.value = '';
 }
 
 function closePopup(popup) {
@@ -120,9 +113,13 @@ function handleSubmitAddPlace (evt) {
 }
 
 profileEditButton.addEventListener('click', function() {
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
   openPopup(popupEditProfile);
 });
 placeAddButton.addEventListener('click', function() {
+  placeInput.value = '';
+  linkInput.value = '';
   openPopup(popupAddPlace);
 });
 
