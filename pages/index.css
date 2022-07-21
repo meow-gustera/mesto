@@ -29,6 +29,7 @@
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__overlay/popup__overlay.css);
 @import url(../blocks/popup/__button/popup__button.css);
 @import url(../blocks/popup/__button/_input/popup__button_input_close.css);
 @import url(../blocks/popup/__button/_input/popup__button_input_save.css);
