@@ -10,7 +10,7 @@
   color: #FFFFFF;
   min-width: 358px;
   min-height: 50px;
-  margin: 45px auto 27px;
+  margin: 15px auto 27px;
   border: none;
   border-bottom: none;
 }
@@ -32,7 +32,7 @@
     font-size: 14px;
     line-height: 17px;
     max-width: 238px;
-    margin: 45px auto 15px;
+    margin: 15px auto 15px;
   }
 }
 
