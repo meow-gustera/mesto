@@ -3,8 +3,8 @@ const popupEditProfile = document.querySelector('.popup_edit_profile');
 
 const placeAddButton = document.querySelector('.profile__add-button');
 const popupAddPlace  = document.querySelector('.popup_add_place');
-const formElementEdit = document.querySelector('div.popup_edit_profile .popup__input');
-const formElementAddPlace = document.querySelector('div.popup_add_place .popup__input');
+const formElementEdit = document.querySelector('div.popup_edit_profile .popup__form');
+const formElementAddPlace = document.querySelector('div.popup_add_place .popup__form');
 const popupZoomPhoto = document.querySelector('.popup_zoom_image');
 
 const profileName = document.querySelector('.profile__name');
@@ -126,9 +126,7 @@ placeAddButton.addEventListener('click', function() {
 });
 
 closeButtons.forEach((button) => {
-  // находим 1 раз ближайший к крестику попап
   const popup = button.closest('.popup');
-  // устанавливаем обработчик закрытия на крестик
   button.addEventListener('click', () => closePopup(popup));
 });
 

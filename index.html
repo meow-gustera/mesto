@@ -40,13 +40,15 @@
       <div class="popup popup_edit_profile">
         <div class="popup__overlay"></div>
         <div class="popup__container" id="edit-profile">
-          <button class="popup__button popup__button_input_close" type="button" aria-label="Закрыть попап"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__input" name="popup">
-            <input type="text" class="popup__input popup__input_data_name" placeholder="Жак-Ив Кусто" name="name">
-            <input type="text" class="popup__input popup__input_data_description" placeholder="Исследователь океана" name="job">
+          <form class="popup__form  popup__form_profile" name="popup_profile" novalidate>
+            <input type="text" class="popup__input popup__input_data_name" id="popup__input_data_name" placeholder="Имя" name="name" minlength="2" maxlength="40" required>
+            <span class="popup__input_data_name-error" id="popup__input_data_name-error"></span>
+            <input type="text" class="popup__input popup__input_data_description" id="popup__input_data_description" placeholder="О себе" name="about_profile" minlength="2" maxlength="200" required>
+            <span class="popup__input_error popup__input-span-error popup__input_description-error" id="popup__input_data_description-error"></span>
             <button class="popup__button popup__button_input_save" type="submit">Сохранить</button>
           </form>
+          <button class="popup__button popup__button_input_close" type="button" aria-label="Закрыть попап"></button>
         </div>
       </div>
 
@@ -55,9 +57,11 @@
         <div class="popup__container" id="add-place">
           <button class="popup__button popup__button_input_close" type="button" aria-label="Закрыть попап"></button>
           <h2 class="popup__title">Новое место</h2>
-          <form class="popup__input" name="popup">
-            <input type="text" class="popup__input popup__input_data_place" placeholder="Название" name="place">
-            <input type="text" class="popup__input popup__input_data_link" placeholder="Ссылка на картинку" name="link">
+          <form class="popup__form popup__form_place" name="popup_add_place" novalidate>
+            <input type="text" class="popup__input popup__input_data_place" placeholder="Название" id="popup__input_data_place" name="place" minlength="2" maxlength="30" required >
+            <span class="popup__input_place-error" id="popup__input_data_place-error"></span>
+            <input type="url"  class="popup__input popup__input_data_link" placeholder="Ссылка на картинку" id="popup__input_data_link" name="link" required>
+            <span class="popup__input_link-error" id="popup__input_data_link-error"></span>
             <button class="popup__button popup__button_input_save" type="submit">Создать</button>
           </form>
         </div>
@@ -67,14 +71,14 @@
         <div class="popup__overlay"></div>
         <div class="popup__container-photo" id="zoom-photo">
           <button class="popup__button popup__button_input_close" type="button" aria-label="Закрыть изображение"></button>
-          <img class="popup__photo" src="ч" alt="ч">
+          <img class="popup__photo" src="#" alt="ч">
           <p class="popup__description">dfsgrgd</p>
         </div>
       </div>
 
       <template class="element_template">
         <li class="element__item">
-          <img class="element__photo" src="ч" alt="ч">
+          <img class="element__photo" src="#" alt="ч">
           <div class="element__description">
             <h2 class="element__title"></h2>
             <button type="button" class="element__like" aria-label="Лайк"></button>
